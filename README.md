@@ -1,4 +1,4 @@
-# anomaly-detection
+# anomaly-detection-web-app
 
 The web app is built to detect anomalies in a set of data. 
 
