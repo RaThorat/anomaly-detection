@@ -2,9 +2,9 @@
 
 The web app is built to detect anomalies in a set of data. 
 
-Input data: The data (example_input_data.xlsx) is encrypted with Python hash codes. A fake anomaly registry (example_input_data.xlsx) contains data that have abused the subsidy in the past.
+Input data: The data (example_input_data.xlsx) is encrypted with Python hash codes. A fake anomaly registry (example_register_data.xlsx) contains data that have abused the subsidy in the past.
 
-The criteria have been proposed as; 
+The anomalies that are detected; 
 
 whether the applicant information (name of lead party/legal person) appears several times in the datasheet or
 
