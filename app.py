@@ -290,9 +290,9 @@ def output_graph2(graphs):
         dfff["More than 100,000 euros requested?"].fillna("No", inplace=True)
         fig = px.pie(dfff, names='More than 100,000 euros requested?', title='More than 100,000 euros requested?',
                      hole=.1)
-        # subplot code but incomplete -> subplot with df['gevraagde subsidie'] hoogte
-        ##label = dfff["Meer dan 100,000 euros is gevraagd?"].value_counts().index
-        ##value = dfff["Meer dan 100,000 euros is gevraagd?"].value_counts().values
+        # subplot code but incomplete -> subplot with df['Grant_requested'] hoogte
+        ##label = dfff["More than 100,000 euros requested?"].value_counts().index
+        ##value = dfff["More than 100,000 euros requested?"].value_counts().values
         ##trace = go.Pie(labels=label, values=value)
         ##data = [trace]
         ##fig = make_subplots(rows=2, cols=1)
