@@ -6,9 +6,9 @@ Input data: The data is encrypted with Python hash codes. The data is temporaril
 
 The criteria have been proposed as; 
 
-whether the applicant information (name of lead party/legal person) appears several times in the dataheet or
+whether the applicant information (name of lead party/legal person) appears several times in the datasheet or
 
-whether the applicant's financial data (bank account number) appears several times in the dataheet or
+whether the applicant's financial data (bank account number) appears several times in the datasheet or
 
 whether more than 100,000 euros was requested when applying or 
 
