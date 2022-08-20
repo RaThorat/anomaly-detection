@@ -19,7 +19,7 @@ Applications is made in Python with Dash plotly.
 
 Instructions for use: In an integrated development environment (IDE): Open the code in VS code and run the main .py file Visit http://127.0.0.1:8050/ in your web browser.
 
-On the website Dash (xxxxx.pythonanywhere.com) : On the website you see the possibility to upload Excel example_input_data.xlsx). As soon as you add your Excel sheet, the analysis starts. On the screen you can see an output file with the reference numbers that meet the criteria. 
+On the website Dash (xxxxx.pythonanywhere.com) : you see the possibility to upload Excel example_input_data.xlsx). As soon as you add your Excel sheet, the analysis starts. On the screen you can see an output file with the reference numbers that meet the criteria. 
 
 You will also see a number of summary graphs.
 
