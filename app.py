@@ -79,7 +79,7 @@ app.layout = dbc.Container([
             xs=12, sm=12, md=12, lg=4, xl=4
         ),
         dbc.Col([
-            html.P("Top 15 match in register data",
+            html.P("Top 5 match in register data",
                    style={"textDecoration": "underline"}),
             dcc.Graph(id='output-data-graph3'),
         ],  # width={'size':4, 'offset':0, 'order':3},
@@ -129,7 +129,17 @@ def parse_contents(contents, filename, date):
         global loaded_a_file
         loaded_a_file = True
 
-        #changed to local URL because external URL was giving errors
+        
+        #Obsolete code to change the path below:
+        # It is not needed anymore because of gloabl variable loaded_a_file
+        # The path is changed to local URL because external URL was giving errors
+        # But it is given here for additional information. 
+        # RT: path to .xlsx added so that the file can be found from a folder in the web app
+        #THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+        #my_file = os.path.join(THIS_FOLDER, 'nep_MenO_data.xlsx')
+        #df_register = pd.read_excel(my_file)
+        
+        
         df_register = pd.read_excel("Example_register_data.xlsx")
         df['Grant_requested'] = df['Grant_requested'].astype(str)
         df['Grant_requested'] = df['Grant_requested'].str.replace('.', '').str.replace(',', '.').str.replace('€','').astype('float')
@@ -180,13 +190,13 @@ def parse_contents(contents, filename, date):
                     df['CoC_number in register named'][j] = '\n'.join(ref)
 
         for j in range(0,l):
-            penv=df['Bankrekeningnummer (IBAN)'][j]
+            penv=df['IBAN_number'][j]
             ref=[]
             for k in range(0,l):
                 if k!=j:
-                    if penv==df['Bankrekeningnummer (IBAN)'][k]:
+                    if penv==df['IBAN_number'][k]:
                         ref.append(df['Reference'][k])
-            df['Bankrekeningnummer herhaald in'][j]='\n'.join(ref)
+            df['IBAN_number repeated in'][j]='\n'.join(ref)
 
         for j in range(0,l):
             if df['Grant_requested'][j] > 100000:
@@ -266,9 +276,9 @@ def output_graph(graphs):
         dfff = dff[dff['Company repeated in'].astype(str).str.startswith('ABCD')]
         # lists only top 15
         # dfff = pd.Categorical(dfff['Company repeated in'])
-        dfff = dfff.groupby(['Company repeated in']).size().to_frame().sort_values([0],ascending=False).head(15).reset_index()
+        dfff = dfff.groupby(['Company repeated in']).size().to_frame().sort_values([0],ascending=False).head(5).reset_index()
         # change to go.figure() and use layout with tickertype to only display whole numbers
-        fig = px.histogram(dfff, x='Company repeated in', title='Top 15 repeated applicants', nbins=1)
+        fig = px.histogram(dfff, x='Company repeated in', title='Top 5 repeated applicants', nbins=1)
         return fig
     else:
         # empty figure with nothing in it
