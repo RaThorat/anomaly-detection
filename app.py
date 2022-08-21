@@ -125,22 +125,17 @@ def parse_contents(contents, filename, date):
         elif 'xls' in filename:
             # Assume that the user uploaded an excel file
             df = pd.read_excel(io.BytesIO(decoded))
-
+        # The path is changed to local URL because external URL was giving errors
         global loaded_a_file
         loaded_a_file = True
-
-        
-        #Obsolete code to change the path below:
-        # It is not needed anymore because of gloabl variable loaded_a_file
-        # The path is changed to local URL because external URL was giving errors
-        # But it is given here for additional information. 
+       
         # RT: path to .xlsx added so that the file can be found from a folder in the web app
-        #THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-        #my_file = os.path.join(THIS_FOLDER, 'nep_MenO_data.xlsx')
-        #df_register = pd.read_excel(my_file)
+        THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+        my_file = os.path.join(THIS_FOLDER, 'Example_register_data.xlsx')
+        df_register = pd.read_excel(my_file)
         
         
-        df_register = pd.read_excel("Example_register_data.xlsx")
+        
         df['Grant_requested'] = df['Grant_requested'].astype(str)
         df['Grant_requested'] = df['Grant_requested'].str.replace('.', '').str.replace(',', '.').str.replace('€','').astype('float')
         df['Company repeated in'] = None
