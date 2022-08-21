@@ -1,5 +1,6 @@
 # anomaly-detection-web-app
 
+Repository contains app.py, a python file to run the script, example_input_data.xlsx as an example file to upload in the web app, example_register_data.xlsx as an example file which is saved in pythonanywhere website for checking whether the Chamber of Commerce number is present in the anomaly registry. The repository also contains a file of the image after uploading the input data for showing results.
 
 A web app is built to detect anomalies in a set of grant application. 
 
