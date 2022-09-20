@@ -46,8 +46,9 @@ I highly recommend this video.
 # Handeling intructions:
 
 You can either open the code in you IDE, run it and visit http://127.0.0.1:8050/ in your web browser or
+visit the webapp on the following website
 
-# visit the webapp on the website rathorat.pythonanywhere.com
+# https://rathorat.pythonanywhere.com/ 
  
 Once in the web browser, you will see the possibility to upload Excel example_input_data.xlsx. As soon as you upload the excel sheet, the analysis starts. On the screen you can see an output file with the reference numbers that meet the criteria. You will also see a number of summary graphs.
 You can download the output file by clicking the 'Export' button.
